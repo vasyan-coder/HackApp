@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/contentStart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/contentEnd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/contentBottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="32dp" />
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:contentDescription="@null"
+        android:src="@drawable/aplha_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textWelcome"
+        style="@style/TextAppearance.HackApp.BodyMedium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constrainedHeight="true"
+        android:text="@string/welcome_text"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCreateAccount"
+        app:layout_constraintEnd_toStartOf="@+id/contentEnd"
+        app:layout_constraintStart_toStartOf="@+id/contentStart"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonCreateAccount"
+        style="@style/Widget.HackApp.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/create_account"
+        app:layout_constraintBottom_toTopOf="@+id/textViewLogIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewLogIn"
+        style="@style/TextAppearance.HackApp.HyperText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prompt_login"
+        app:layout_constraintBottom_toTopOf="@+id/contentBottom"
+        app:layout_constraintEnd_toStartOf="@+id/contentEnd"
+        app:layout_constraintStart_toStartOf="@+id/contentStart" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

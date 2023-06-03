@@ -15,3 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "HackApp"
 include(":app")
+include(":core")
+include(":feature_welcome:presentation")
