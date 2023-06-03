@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.HackApp.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+    </style>
+    
+    <style name="TextAppearance.HackApp.BodyMedium" parent="TextAppearance.Material3.BodyMedium" >
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+    </style>
+
+    <style name="TextAppearance.HackApp.HyperText" parent="TextAppearance.Material3.BodyMedium" >
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+    </style>
+
+</resources>
