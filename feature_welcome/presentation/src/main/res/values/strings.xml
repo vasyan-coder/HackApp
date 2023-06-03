@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_text">"""
+Welcome to the Hackathon Aggregator app!
+
+• Discover numerous hackathons around the world.
+• Save your favorite events.
+• Never miss a deadline with our reminders.
+• Join hackathons directly from the app.
+• Meet like-minded people and form teams.
+• Track your hackathon achievements.
+
+Let's start hacking!
+        """
+    </string>
+    <string name="prompt_login">Do you have account? Log in</string>
+    <string name="create_account">Create account</string>
+</resources>
