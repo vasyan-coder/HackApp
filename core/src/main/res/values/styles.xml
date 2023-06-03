@@ -9,6 +9,7 @@
         <item name="android:textStyle">bold</item>
         <item name="fontFamily">@font/montserrat_medium</item>
         <item name="android:letterSpacing">0.1</item>
+        <item name="android:paddingHorizontal">48dp</item>
     </style>
 
     <style name="Widget.HackApp.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense">
