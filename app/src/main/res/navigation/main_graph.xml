@@ -9,4 +9,9 @@
         android:name="com.vasyancoder.presentation.GreetingFragment"
         android:label="GreetingFragment"
         tools:layout="@layout/fragment_greeting" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.vasyancoder.presentation.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login" />
 </navigation>

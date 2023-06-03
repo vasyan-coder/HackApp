@@ -17,3 +17,4 @@ rootProject.name = "HackApp"
 include(":app")
 include(":core")
 include(":feature_welcome:presentation")
+include(":feature_login:presentation")

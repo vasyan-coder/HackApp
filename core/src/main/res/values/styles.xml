@@ -22,6 +22,7 @@
         <item name="boxBackgroundColor">@android:color/transparent</item>
         <item name="android:textColorHint">@color/grey</item>
         <item name="hintTextColor">@color/orange</item>
+        <item name="passwordToggleTint">@color/grey</item>
     </style>
 
         <style name="Widget.HackApp.TextInputEditText" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox.Dense">
