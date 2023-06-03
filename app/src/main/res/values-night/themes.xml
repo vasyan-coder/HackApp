@@ -1,7 +1,15 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
+
     <!-- Base application theme. -->
-    <style name="Base.Theme.HackApp" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.V24.Night.Theme.HackApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="buttonStyle">@style/Widget.HackApp.Button</item>
+        <item name="android:windowBackground">@color/dark_grey</item>
+        <item name="android:statusBarColor">@color/dark_grey</item>
+        <item name="colorPrimary">@color/orange</item>
     </style>
+
+    <style name="Base.Theme.HackApp" parent="Base.V24.Night.Theme.HackApp" />
+
 </resources>
