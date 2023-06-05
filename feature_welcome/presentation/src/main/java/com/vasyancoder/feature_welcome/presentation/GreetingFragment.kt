@@ -1,4 +1,4 @@
-package com.vasyancoder.presentation
+package com.vasyancoder.feature_welcome.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater

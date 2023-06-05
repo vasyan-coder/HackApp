@@ -61,7 +61,8 @@
             style="@style/Widget.HackApp.TextInputEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/login" />
+            android:hint="@string/login"
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -84,7 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

@@ -6,7 +6,7 @@
     app:startDestination="@id/greetingFragment">
     <fragment
         android:id="@+id/greetingFragment"
-        android:name="com.vasyancoder.presentation.GreetingFragment"
+        android:name="com.vasyancoder.feature_welcome.presentation.GreetingFragment"
         android:label="GreetingFragment"
         tools:layout="@layout/fragment_greeting" />
     <fragment
