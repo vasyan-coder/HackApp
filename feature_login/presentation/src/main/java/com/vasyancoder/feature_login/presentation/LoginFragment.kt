@@ -1,11 +1,11 @@
-package com.vasyancoder.presentation
+package com.vasyancoder.feature_login.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.vasyancoder.presentation.databinding.FragmentLoginBinding
+import com.vasyancoder.feature_login.presentation.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null

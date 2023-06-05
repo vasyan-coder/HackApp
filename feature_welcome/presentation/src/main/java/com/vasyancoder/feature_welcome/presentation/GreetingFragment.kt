@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.vasyancoder.presentation.databinding.FragmentGreetingBinding
+import com.vasyancoder.feature_welcome.presentation.databinding.FragmentGreetingBinding
 
 class GreetingFragment : Fragment() {
     private var _binding: FragmentGreetingBinding? = null

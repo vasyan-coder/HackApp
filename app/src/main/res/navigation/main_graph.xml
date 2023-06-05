@@ -11,7 +11,7 @@
         tools:layout="@layout/fragment_greeting" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.vasyancoder.presentation.LoginFragment"
+        android:name="com.vasyancoder.feature_login.presentation.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login" />
 </navigation>

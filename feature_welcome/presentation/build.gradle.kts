@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.vasyancoder.presentation"
+    namespace = "com.vasyancoder.feature_welcome.presentation"
     compileSdk = 33
 
     defaultConfig {
