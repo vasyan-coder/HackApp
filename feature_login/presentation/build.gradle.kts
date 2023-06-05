@@ -45,5 +45,10 @@ dependencies {
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
+    implementation(libs.androidx.lifecycler.viewmodel)
+    implementation(libs.org.jetbrains.kotlinx.coroutines)
+
+    implementation(project(":feature_login:domain"))
     implementation(project(":core"))
+    implementation(project(":data"))
 }
