@@ -9,7 +9,9 @@ appcompat = "1.6.1"
 material = "1.9.0"
 constraintlayout = "2.1.4"
 org-jetbrains-kotlin-jvm = "1.8.0"
+
 androix-navigation = "2.5.3"
+room = "2.5.1"
 ksp = "1.8.10-1.0.9"
 
 [libraries]
@@ -20,8 +22,12 @@ espresso-core = { group = "androidx.test.espresso", name = "espresso-core", vers
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "androix-navigation" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "androix-navigation" }
+
+androidx-room-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room"}
+androidx-room-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
