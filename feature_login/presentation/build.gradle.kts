@@ -47,6 +47,7 @@ dependencies {
 
     implementation(libs.androidx.lifecycler.viewmodel)
     implementation(libs.org.jetbrains.kotlinx.coroutines)
+    implementation(libs.androidx.fragment)
 
     implementation(project(":feature_login:domain"))
     implementation(project(":core"))
