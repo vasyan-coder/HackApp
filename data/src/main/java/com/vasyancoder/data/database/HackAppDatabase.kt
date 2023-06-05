@@ -30,7 +30,22 @@ abstract class HackAppDatabase : RoomDatabase() {
                     context.applicationContext,
                     HackAppDatabase::class.java,
                     "hack_app_database"
-                ).build()
+                ).addCallback(object : RoomDatabase.Callback() {
+                    override fun onCreate(db: SupportSQLiteDatabase) {
+                        super.onCreate(db)
+                        CoroutineScope(Dispatchers.IO).launch {
+                            INSTANCE?.userDao()?.insertUser(
+                                User(
+                                    uid = 0,
+                                    login = "test",
+                                    password = "123",
+                                    email = "test@mail.com"
+                                )
+                            )
+                        }
+                    }
+                })
+                    .build()
                 INSTANCE = instance
                 instance
             }
