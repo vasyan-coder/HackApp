@@ -46,5 +46,7 @@ dependencies {
     implementation(libs.androidx.room.room.ktx)
     ksp(libs.androidx.room.room.compiler)
 
+    implementation(libs.org.jetbrains.kotlinx.coroutines)
+
     implementation(project(":feature_login:domain"))
 }
