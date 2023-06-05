@@ -8,7 +8,7 @@ interface UserRepository {
      * Verifies account information
      */
     suspend fun authenticateUser(
-        username: String,
+        login: String,
         password: String
     ): AuthenticateUserUseCase.AuthenticationResult
 
