@@ -1,6 +1,7 @@
 package com.vasyancoder.feature_login.presentation
 
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.vasyancoder.feature_login.domain.use_case.AuthenticateUserUseCase
 import com.vasyancoder.feature_login.presentation.databinding.FragmentLoginBinding
-import kotlin.math.log
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
@@ -17,6 +17,12 @@ class LoginFragment : Fragment() {
         get() = _binding!!
 
     private val viewModel: LoginViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sharedElementEnterTransition =
+            TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
 
     implementation(project(":core"))
+    implementation(project(":navigation"))
 
     implementation(project(":feature_welcome:presentation"))
 

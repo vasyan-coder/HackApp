@@ -2,6 +2,9 @@
 <resources>
     <string name="app_name">HackApp</string>
 
+    <!--for animation-->
+    <string name="bottomButtonTransition">buttonTransition</string>
+
     <!--login feature-->
     <string name="authorization">Authorization</string>
     <string name="login">Login</string>

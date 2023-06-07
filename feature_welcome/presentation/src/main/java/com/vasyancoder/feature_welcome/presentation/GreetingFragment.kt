@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigator
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import com.vasyancoder.feature_welcome.presentation.databinding.FragmentGreetingBinding
+import com.vasyancoder.navigation.navigate
 
 class GreetingFragment : Fragment() {
     private var _binding: FragmentGreetingBinding? = null
@@ -23,6 +26,18 @@ class GreetingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.textPromptLogIn.setOnClickListener {
+            val extras: Navigator.Extras = FragmentNavigatorExtras(
+                binding.buttonCreateAccount to
+                        getString(com.vasyancoder.core.R.string.bottomButtonTransition)
+            )
+
+            navigate(
+                actionId = R.id.action_greetingFragment_to_loginFragment,
+                extras = extras
+            )
+        }
     }
 
     override fun onDestroyView() {
