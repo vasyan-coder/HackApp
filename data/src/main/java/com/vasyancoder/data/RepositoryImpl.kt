@@ -1,6 +1,7 @@
 package com.vasyancoder.data
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import com.vasyancoder.data.database.HackAppDatabase
 import com.vasyancoder.feature_login.domain.UserRepository
 import com.vasyancoder.feature_login.domain.use_case.AuthenticateUserUseCase
@@ -26,5 +27,9 @@ class RepositoryImpl(
 
     override fun storeUserSession(userId: String) {
         TODO("Not yet implemented")
+    }
+
+    fun getUserRole(login: String): LiveData<String> {
+        return userDao.getUserRole(login)
     }
 }

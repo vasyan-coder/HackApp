@@ -16,6 +16,8 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     private val validateUserInput = ValidateUserInputUseCase()
     private val authenticateUser = AuthenticateUserUseCase(repository)
 
+    lateinit var userRole: LiveData<String>
+
     private val _authenticationResult =
         MutableLiveData<AuthenticateUserUseCase.AuthenticationResult>()
     val authenticationResult: LiveData<AuthenticateUserUseCase.AuthenticationResult> =
@@ -25,6 +27,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             val authentication =
                 authenticateUser(AuthenticateUserUseCase.UserCredentials(login, password))
+            userRole = repository.getUserRole(login)
             _authenticationResult.postValue(authentication)
         }
     }

@@ -1,5 +1,6 @@
 package com.vasyancoder.feature_login.presentation
 
+import android.content.Context
 import android.os.Bundle
 import android.transition.TransitionInflater
 import android.util.Log
@@ -60,7 +61,18 @@ class LoginFragment : Fragment() {
 
         viewModel.authenticationResult.observe(viewLifecycleOwner) {
             if (it == AuthenticateUserUseCase.AuthenticationResult.Success) {
-                navigate(actionId = R.id.action_loginFragment_to_hackathonsListFragment)
+                val sharedPrefWrite = requireActivity().getPreferences(Context.MODE_PRIVATE)
+                val editor = sharedPrefWrite.edit()
+                viewModel.userRole.observe(viewLifecycleOwner) {
+                    if (it != null) {
+                        editor.putString(
+                            SHARED_PREF_LOGIN,
+                            it
+                        )
+                        editor.apply()
+                    }
+                    navigate(actionId = R.id.action_loginFragment_to_hackathonsListFragment)
+                }
             }
         }
     }
@@ -72,6 +84,7 @@ class LoginFragment : Fragment() {
 
     companion object {
 
+        const val SHARED_PREF_LOGIN = "login"
         private const val TAG = "LoginFragment"
     }
 }

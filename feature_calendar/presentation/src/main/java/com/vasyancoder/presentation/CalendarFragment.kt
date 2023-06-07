@@ -1,5 +1,7 @@
 package com.vasyancoder.presentation
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.vasyancoder.navigation.navigate
 import com.vasyancoder.presentation.calendar_list.CalendarAdapter
 import com.vasyancoder.presentation.databinding.FragmentCalendarBinding
 
@@ -35,6 +38,18 @@ class CalendarFragment : Fragment() {
 
         viewModel.calendarList.observe(viewLifecycleOwner) {
             calendarAdapter.submitList(it)
+        }
+        binding.buttonLogOut.setOnClickListener {
+            // write
+            val sharedPrefWrite = requireActivity().getPreferences(Context.MODE_PRIVATE)
+            val editor = sharedPrefWrite.edit()
+            editor.putString(
+                SHARED_PREF_LOGIN,
+                ""
+            )
+            editor.apply()
+
+            navigate(actionId = R.id.action_calendarFragment_to_greetingFragment)
         }
     }
 
@@ -68,5 +83,11 @@ class CalendarFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+
+        const val SHARED_PREF_LOGIN = "login"
+        private const val TAG = "LoginFragment"
     }
 }

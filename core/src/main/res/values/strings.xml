@@ -35,5 +35,6 @@ Let's start hacking!
     <string name="e_mail">e-mail</string>
     <string name="list">List</string>
     <string name="calendar">Calendar</string>
+    <string name="log_out">Log out</string>
 
 </resources>

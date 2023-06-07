@@ -20,4 +20,7 @@ interface UserDao {
         login: String,
         password: String
     ): Boolean
+
+    @Query("SELECT role FROM User WHERE login=:login")
+    fun getUserRole(login: String): LiveData<String>
 }

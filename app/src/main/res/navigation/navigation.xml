@@ -26,6 +26,8 @@
             app:destination="@id/registrationFragment" />
         <action
             android:id="@+id/action_loginFragment_to_hackathonsListFragment"
+            app:popUpTo="@+id/navigation"
+            app:popUpToInclusive="true"
             app:destination="@id/hackathonsListFragment" />
     </fragment>
     <fragment
@@ -45,5 +47,12 @@
     <fragment
         android:id="@+id/calendarFragment"
         android:name="com.vasyancoder.presentation.CalendarFragment"
-        android:label="CalendarFragment" />
+        android:label="CalendarFragment"
+        tools:layout="@layout/fragment_calendar">
+        <action
+            android:id="@+id/action_calendarFragment_to_greetingFragment"
+            app:destination="@id/greetingFragment"
+            app:popUpTo="@id/greetingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
