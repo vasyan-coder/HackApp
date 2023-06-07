@@ -23,6 +23,9 @@ class CalendarRepositoryImpl(
 
 
     override suspend fun addCalendarItemUseCase() {
+    }
 
+    override suspend fun deleteCalendarItemUseCase(id: Int) {
+        calendarDao.deleteCalendarItemById(id)
     }
 }

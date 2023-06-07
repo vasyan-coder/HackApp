@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.vasyancoder.presentation.calendar_list.CalendarAdapter
 import com.vasyancoder.presentation.databinding.FragmentCalendarBinding
 
@@ -41,6 +43,26 @@ class CalendarFragment : Fragment() {
             calendarAdapter = CalendarAdapter()
             adapter = calendarAdapter
         }
+        val callback = object : ItemTouchHelper.SimpleCallback(
+            0,
+            ItemTouchHelper.LEFT
+        ) {
+
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val item = calendarAdapter.currentList[viewHolder.adapterPosition]
+                viewModel.deleteCalendarItem(item.id)
+            }
+        }
+        val itemTouchHelper = ItemTouchHelper(callback)
+        itemTouchHelper.attachToRecyclerView(binding.recyclerCalendar)
     }
 
     override fun onDestroyView() {
