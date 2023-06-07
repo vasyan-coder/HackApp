@@ -55,4 +55,6 @@ dependencies {
     implementation(project(":feature_welcome:presentation"))
     implementation(project(":feature_login:presentation"))
     implementation(project(":feature_registration:presentation"))
+    implementation(project(":feature_hackathon_list:presentation"))
+    implementation(project(":feature_calendar:presentation"))
 }

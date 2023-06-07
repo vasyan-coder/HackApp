@@ -9,5 +9,6 @@ data class User(
     @PrimaryKey(autoGenerate = true) val uid: Int,
     @ColumnInfo(name = "login") val login: String,
     @ColumnInfo(name = "password") val password: String,
-    @ColumnInfo(name = "email") val email: String
+    @ColumnInfo(name = "email") val email: String,
+    @ColumnInfo(name = "role") val role: String = "user"
 )

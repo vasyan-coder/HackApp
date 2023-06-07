@@ -33,5 +33,10 @@ Let's start hacking!
     <string name="base_info">Base Info</string>
     <string name="confirm_password">Confirm password</string>
     <string name="e_mail">e-mail</string>
+    <string name="list">List</string>
+    <string name="calendar">Calendar</string>
+    <string name="log_out">Log out</string>
+
+    <string name="add_hackathon">add Hackathon</string>
 
 </resources>

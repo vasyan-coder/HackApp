@@ -25,8 +25,21 @@
         <item name="passwordToggleTint">@color/grey</item>
     </style>
 
-        <style name="Widget.HackApp.TextInputEditText" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox.Dense">
+    <style name="Widget.HackApp.TextInputEditText" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox.Dense">
         <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Widget.HackApp.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+    </style>
+
+    <style name="Widget.HackApp.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/orange</item>
+    </style>
+
+    <style name="Widget.HackApp.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/dark_grey_secondary</item>
+        <item name="cardCornerRadius">15dp</item>
+        <item name="cardUseCompatPadding">true</item>
     </style>
 
 </resources>

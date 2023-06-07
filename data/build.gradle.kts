@@ -50,4 +50,7 @@ dependencies {
 
     implementation(project(":feature_login:domain"))
     implementation(project(":feature_registration:domain"))
+    implementation(project(":feature_hackathon_list:domain"))
+    implementation(project(":feature_calendar:domain"))
+
 }
