@@ -8,8 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigator
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import com.vasyancoder.feature_login.domain.use_case.AuthenticateUserUseCase
 import com.vasyancoder.feature_login.presentation.databinding.FragmentLoginBinding
+import com.vasyancoder.navigation.navigate
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
@@ -40,6 +43,17 @@ class LoginFragment : Fragment() {
             viewModel.authenticateUser(
                 login = binding.textInputLoginEditText.text.toString(),
                 password = binding.textInputPasswordEditText.text.toString()
+            )
+        }
+        binding.textViewRegistration.setOnClickListener {
+            val extras: Navigator.Extras = FragmentNavigatorExtras(
+                binding.buttonLogIn to
+                        getString(com.vasyancoder.core.R.string.bottomButtonTransition)
+            )
+
+            navigate(
+                actionId = R.id.action_loginFragment_to_registrationFragment,
+                extras = extras
             )
         }
 
