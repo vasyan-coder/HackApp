@@ -16,7 +16,7 @@ class HackathonRepositoryImpl(
     private val db = HackAppDatabase.getDatabase(context)
     private val hackathonDao = db.hackathonDao()
 
-    override suspend fun getTagList() = listOf<Tag>(
+    override fun getTagList() = listOf<Tag>(
         Tag(
             name = "Online",
             status = false
@@ -27,19 +27,9 @@ class HackathonRepositoryImpl(
         ),
     )
 
-    override fun getHackathonList(tag: String): LiveData<List<Hackathon>> {
-        return if (tag == "") {
-            Transformations.map(
-                hackathonDao.getHackathonList()
-            ) {
-                HackathonMapper.mapListDbModelToListEntity(it)
-            }
-        } else {
-            Transformations.map(
-                hackathonDao.getFilterHackathonList(tag)
-            ) {
-                HackathonMapper.mapListDbModelToListEntity(it)
-            }
-        }
+    override fun getHackathonList(tag: String): LiveData<List<Hackathon>> = Transformations.map(
+        hackathonDao.getHackathonList()
+    ) {
+        HackathonMapper.mapListDbModelToListEntity(it)
     }
 }

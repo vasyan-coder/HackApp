@@ -7,7 +7,7 @@ class GetTagListUseCase(
     private val repository: HackathonRepository
 ) {
 
-    suspend operator fun invoke(): List<Tag> {
+    operator fun invoke(): List<Tag> {
         return repository.getTagList()
     }
 }

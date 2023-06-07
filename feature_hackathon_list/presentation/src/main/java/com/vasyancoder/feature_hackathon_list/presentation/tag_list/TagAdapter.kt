@@ -2,10 +2,13 @@ package com.vasyancoder.feature_hackathon_list.presentation.tag_list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.vasyancoder.feature_hackathon_list.domain.entity.Tag
 import com.vasyancoder.feature_hackathon_list.presentation.databinding.ItemTagBinding
 
-class TagAdapter: RecyclerView.Adapter<TagAdapter.ViewHolder>() {
+class TagAdapter:
+    ListAdapter<Tag, TagAdapter.ViewHolder>(TagItemDiffCallback()) {
 
     inner class ViewHolder(val binding: ItemTagBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -19,11 +22,10 @@ class TagAdapter: RecyclerView.Adapter<TagAdapter.ViewHolder>() {
         return ViewHolder(itemBinding)
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = getItem(position)
+        with(holder) {
+            binding.textName.text = item.name
+        }
     }
 }

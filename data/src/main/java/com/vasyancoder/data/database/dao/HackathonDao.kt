@@ -8,11 +8,8 @@ import com.vasyancoder.data.database.model.HackathonModel
 
 interface HackathonDao {
 
-    @Query("SELECT * FROM Hackathon")
+    @Query(" SELECT * FROM Hackathon WHERE (:tag = '' OR tag = :tag)")
     fun getHackathonList(): LiveData<List<HackathonModel>>
-
-    @Query("SELECT * FROM Hackathon WHERE tag = :status")
-    fun getFilterHackathonList(tag: String): LiveData<List<HackathonModel>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addHackathon(hackathon: HackathonModel)

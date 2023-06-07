@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.vasyancoder.feature_hackathon_list.presentation.databinding.FragmentHackathonsListBinding
 import com.vasyancoder.feature_hackathon_list.presentation.hackathon_list.HackathonsAdapter
+import com.vasyancoder.feature_hackathon_list.presentation.tag_list.TagAdapter
 
 class HackathonsListFragment : Fragment() {
 
@@ -17,6 +18,7 @@ class HackathonsListFragment : Fragment() {
     private val viewModel: HackathonsListViewModel by viewModels()
 
     private lateinit var hackathonsAdapter: HackathonsAdapter
+    private lateinit var tagAdapter: TagAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,6 +33,9 @@ class HackathonsListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setUpHackathonsRecyclerView()
+        setUpTagRecyclerView()
+
+        tagAdapter.submitList(viewModel.tagsList)
 
         viewModel.hackathonList.observe(viewLifecycleOwner) {
             hackathonsAdapter.submitList(it)
@@ -41,6 +46,13 @@ class HackathonsListFragment : Fragment() {
         with(binding.recyclerHackathons) {
             hackathonsAdapter = HackathonsAdapter()
             adapter = hackathonsAdapter
+        }
+    }
+
+    private fun setUpTagRecyclerView() {
+        with(binding.recyclerHackathons) {
+            tagAdapter = TagAdapter()
+            adapter = tagAdapter
         }
     }
 

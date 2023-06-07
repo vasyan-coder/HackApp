@@ -6,7 +6,7 @@ import com.vasyancoder.feature_hackathon_list.domain.entity.Tag
 
 interface HackathonRepository {
 
-    suspend fun getTagList(): List<Tag>
+    fun getTagList(): List<Tag>
 
     fun getHackathonList(tag: String = ""): LiveData<List<Hackathon>>
 }
