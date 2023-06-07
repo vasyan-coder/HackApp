@@ -22,7 +22,8 @@ class CalendarRepositoryImpl(
     }
 
 
-    override suspend fun addCalendarItemUseCase() {
+    override suspend fun addCalendarItemUseCase(calendarItem: CalendarItem) {
+        calendarDao.addCalendarItem(CalendarItemMapper.mapEntityToDbModel(calendarItem))
     }
 
     override suspend fun deleteCalendarItemUseCase(id: Int) {

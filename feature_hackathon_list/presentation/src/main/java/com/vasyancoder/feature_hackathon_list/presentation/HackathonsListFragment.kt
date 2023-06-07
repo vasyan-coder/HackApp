@@ -6,7 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.vasyancoder.feature_calendar.domain.CalendarItem
 import com.vasyancoder.feature_hackathon_list.presentation.databinding.FragmentHackathonsListBinding
 import com.vasyancoder.feature_hackathon_list.presentation.hackathon_list.HackathonsAdapter
 import com.vasyancoder.feature_hackathon_list.presentation.tag_list.TagAdapter
@@ -48,8 +51,16 @@ class HackathonsListFragment : Fragment() {
     private fun setUpHackathonsRecyclerView() {
         with(binding.recyclerHackathons) {
             hackathonsAdapter = HackathonsAdapter()
-            layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            hackathonsAdapter.onHackathonClickListener = {
+                viewModel.addCalendarItem(
+                    CalendarItem(
+                        name = it.name,
+                        organization = it.organization,
+                        dates = it.dates,
+                        status = it.status
+                    )
+                )
+            }
             adapter = hackathonsAdapter
         }
     }

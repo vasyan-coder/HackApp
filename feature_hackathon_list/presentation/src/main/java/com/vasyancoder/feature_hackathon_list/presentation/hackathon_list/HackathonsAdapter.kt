@@ -10,6 +10,8 @@ import com.vasyancoder.feature_hackathon_list.presentation.databinding.ItemHacka
 class HackathonsAdapter :
     ListAdapter<Hackathon, HackathonsAdapter.ViewHolder>(HackathonItemDiffCallback()) {
 
+    var onHackathonClickListener: ((Hackathon) -> Unit)? = null
+
     inner class ViewHolder(val binding: ItemHackathonBinding) :
         RecyclerView.ViewHolder(binding.root)
 
@@ -29,6 +31,9 @@ class HackathonsAdapter :
             binding.textOrganization.text = item.organization
             binding.textDates.text = item.dates
             binding.textStatus.text = item.status
+            binding.root.setOnClickListener {
+                onHackathonClickListener?.invoke(item)
+            }
         }
     }
 

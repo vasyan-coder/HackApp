@@ -4,7 +4,7 @@ class AddCalendarItemUseCase(
     private val repository: CalendarRepository
 ) {
 
-    suspend operator fun invoke() {
-        repository.addCalendarItemUseCase()
+    suspend operator fun invoke(calendarItem: CalendarItem) {
+        repository.addCalendarItemUseCase(calendarItem)
     }
 }

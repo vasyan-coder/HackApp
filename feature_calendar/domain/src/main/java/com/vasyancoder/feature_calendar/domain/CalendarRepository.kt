@@ -6,7 +6,7 @@ interface CalendarRepository {
 
     fun getCalendarListUseCase(): LiveData<List<CalendarItem>>
 
-    suspend fun addCalendarItemUseCase()
+    suspend fun addCalendarItemUseCase(calendarItem: CalendarItem)
 
     suspend fun deleteCalendarItemUseCase(id: Int)
 }

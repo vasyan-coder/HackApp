@@ -57,4 +57,5 @@ dependencies {
     implementation(project(":data"))
 
     implementation(project(":feature_hackathon_list:domain"))
+    implementation(project(":feature_calendar:domain"))
 }
