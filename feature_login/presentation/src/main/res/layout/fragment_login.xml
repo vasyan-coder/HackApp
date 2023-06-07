@@ -96,6 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="@string/log_in"
+        android:transitionName="@string/bottomButtonTransition"
         app:layout_constraintBottom_toTopOf="@+id/textViewRegistration"
         app:layout_constraintEnd_toStartOf="@+id/contentEnd"
         app:layout_constraintStart_toStartOf="@+id/contentStart" />
