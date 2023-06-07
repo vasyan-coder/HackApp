@@ -28,7 +28,7 @@ class HackathonRepositoryImpl(
     )
 
     override fun getHackathonList(tag: String): LiveData<List<Hackathon>> = Transformations.map(
-        hackathonDao.getHackathonList()
+        hackathonDao.getHackathonList(tag)
     ) {
         HackathonMapper.mapListDbModelToListEntity(it)
     }

@@ -56,8 +56,7 @@ abstract class HackAppDatabase : RoomDatabase() {
                             )
                         }
                     }
-                })
-                    .build()
+                }).build()
                 INSTANCE = instance
                 instance
             }
