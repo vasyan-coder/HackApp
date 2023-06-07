@@ -9,4 +9,5 @@ interface HackathonRepository {
     fun getTagList(): List<Tag>
 
     fun getHackathonList(tag: String = ""): LiveData<List<Hackathon>>
+    suspend fun addHackathonItemUseCase(hackathon: Hackathon)
 }

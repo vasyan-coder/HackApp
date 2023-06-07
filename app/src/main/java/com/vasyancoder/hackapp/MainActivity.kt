@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.vasyancoder.core.Utils
 import com.vasyancoder.feature_login.presentation.LoginFragment
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +35,9 @@ class MainActivity : AppCompatActivity() {
             .navInflater.inflate(R.navigation.navigation)
 
         if (logined != "") {
+            if (logined != null) {
+                Utils.userRole = logined
+            }
             graph.setStartDestination(R.id.hackathonsListFragment)
             navHostFragment.navController.graph = graph
         } else {

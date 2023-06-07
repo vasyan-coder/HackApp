@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.Navigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.vasyancoder.core.Utils
 import com.vasyancoder.feature_login.domain.use_case.AuthenticateUserUseCase
 import com.vasyancoder.feature_login.presentation.databinding.FragmentLoginBinding
 import com.vasyancoder.navigation.navigate
@@ -69,9 +70,10 @@ class LoginFragment : Fragment() {
                             SHARED_PREF_LOGIN,
                             it
                         )
+                        Utils.userRole = it
                         editor.apply()
+                        navigate(actionId = R.id.action_loginFragment_to_hackathonsListFragment)
                     }
-                    navigate(actionId = R.id.action_loginFragment_to_hackathonsListFragment)
                 }
             }
         }

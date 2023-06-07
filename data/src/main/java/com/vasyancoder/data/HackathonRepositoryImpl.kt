@@ -33,4 +33,8 @@ class HackathonRepositoryImpl(
     ) {
         HackathonMapper.mapListDbModelToListEntity(it)
     }
+
+    override suspend fun addHackathonItemUseCase(hackathon: Hackathon) {
+        db.hackathonDao().addHackathon(HackathonMapper.mapEntityToDbModel(hackathon))
+    }
 }

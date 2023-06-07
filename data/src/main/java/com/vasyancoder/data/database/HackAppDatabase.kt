@@ -40,32 +40,43 @@ abstract class HackAppDatabase : RoomDatabase() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
                         CoroutineScope(Dispatchers.IO).launch {
+//                            INSTANCE?.userDao()?.insertUser(
+//                                User(
+//                                    uid = 0,
+//                                    login = "test",
+//                                    password = "123",
+//                                    email = "test@mail.com"
+//                                )
+//                            )
+
                             INSTANCE?.userDao()?.insertUser(
                                 User(
                                     uid = 0,
-                                    login = "test",
-                                    password = "123",
-                                    email = "test@mail.com"
+                                    login = "admin",
+                                    password = "12345",
+                                    email = "admin@mail.com",
+                                    role = "admin"
                                 )
                             )
-                            INSTANCE?.hackathonDao()?.addHackathon(
-                                HackathonModel(
-                                    id = 0,
-                                    name = "TEST",
-                                    organization = "MTC",
-                                    dates = "Регистрация до: 22 марта\nПроходит: с 24 до 30 марта",
-                                    status = "Online"
-                                )
-                            )
-                            INSTANCE?.calendarDao()?.addCalendarItem(
-                                CalendarItemModel(
-                                    id = 0,
-                                    name = "Test",
-                                    organization = "MTC",
-                                    dates = "Dates",
-                                    status = "Online"
-                                )
-                            )
+
+//                            INSTANCE?.hackathonDao()?.addHackathon(
+//                                HackathonModel(
+//                                    id = 0,
+//                                    name = "TEST",
+//                                    organization = "MTC",
+//                                    dates = "Регистрация до: 22 марта\nПроходит: с 24 до 30 марта",
+//                                    status = "Online"
+//                                )
+//                            )
+//                            INSTANCE?.calendarDao()?.addCalendarItem(
+//                                CalendarItemModel(
+//                                    id = 0,
+//                                    name = "Test",
+//                                    organization = "MTC",
+//                                    dates = "Dates",
+//                                    status = "Online"
+//                                )
+//                            )
                         }
                     }
                 }).build()

@@ -10,6 +10,7 @@ import com.vasyancoder.data.HackathonRepositoryImpl
 import com.vasyancoder.feature_calendar.domain.AddCalendarItemUseCase
 import com.vasyancoder.feature_calendar.domain.CalendarItem
 import com.vasyancoder.feature_hackathon_list.domain.entity.Hackathon
+import com.vasyancoder.feature_hackathon_list.domain.use_case.AddHackathonItemUseCase
 import com.vasyancoder.feature_hackathon_list.domain.use_case.GetHackathonListUseCase
 import com.vasyancoder.feature_hackathon_list.domain.use_case.GetTagListUseCase
 import kotlinx.coroutines.launch
@@ -22,6 +23,7 @@ class HackathonsListViewModel(application: Application) : AndroidViewModel(appli
     private val getTagListUseCase = GetTagListUseCase(repository)
     private val getHackathonListUseCase = GetHackathonListUseCase(repository)
     private val addCalendarItemUseCase = AddCalendarItemUseCase(calendarRepository)
+    private val addHackathonItemUseCase = AddHackathonItemUseCase(repository)
 
     private val _hackathonList = MutableLiveData<List<Hackathon>>()
     val hackathonList: LiveData<List<Hackathon>> = _hackathonList
@@ -31,6 +33,12 @@ class HackathonsListViewModel(application: Application) : AndroidViewModel(appli
     init {
         getHackathonListUseCase().observeForever { hackathons ->
             _hackathonList.value = hackathons
+        }
+    }
+
+    fun addHackathon(hackathon: Hackathon) {
+        viewModelScope.launch {
+            addHackathonItemUseCase(hackathon)
         }
     }
 
