@@ -53,8 +53,8 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
 
     implementation(project(":core"))
-    implementation(project(":data"))
     implementation(project(":navigation"))
+    implementation(project(":data"))
 
     implementation(project(":feature_login:domain"))
 }

@@ -49,4 +49,5 @@ dependencies {
     implementation(libs.org.jetbrains.kotlinx.coroutines)
 
     implementation(project(":feature_login:domain"))
+    implementation(project(":feature_registration:domain"))
 }

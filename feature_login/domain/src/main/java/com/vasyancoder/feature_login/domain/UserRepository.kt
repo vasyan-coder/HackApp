@@ -1,4 +1,4 @@
-package com.vasyancoder.feature_login.domain.repository
+package com.vasyancoder.feature_login.domain
 
 import com.vasyancoder.feature_login.domain.use_case.AuthenticateUserUseCase
 

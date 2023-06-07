@@ -117,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         app:layout_constrainedHeight="true"
-        app:layout_constraintBottom_toTopOf="@+id/buttonLogIn"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRegistration"
         app:layout_constraintEnd_toStartOf="@+id/contentEnd"
         app:layout_constraintStart_toStartOf="@+id/contentStart"
         app:layout_constraintTop_toBottomOf="@+id/textInputConfirmPasswordLayout"
@@ -134,7 +134,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/buttonLogIn"
+        android:id="@+id/buttonRegistration"
         style="@style/Widget.HackApp.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

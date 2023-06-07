@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.vasyancoder.feature_registration.presentation"
+    namespace = "com.vasyancoder.feature_registration.domain"
     compileSdk = 33
 
     defaultConfig {
@@ -31,9 +31,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
@@ -44,17 +41,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
-    implementation(libs.androidx.lifecycler.viewmodel)
-    implementation(libs.org.jetbrains.kotlinx.coroutines)
-    implementation(libs.androidx.fragment)
-
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
-
-    implementation(project(":core"))
-    implementation(project(":navigation"))
-    implementation(project(":data"))
-
-    implementation(project(":feature_registration:domain"))
 }
