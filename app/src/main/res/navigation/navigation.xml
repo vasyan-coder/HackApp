@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_hackathonsListFragment"
+            app:destination="@id/hackathonsListFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -35,4 +38,12 @@
             app:destination="@id/loginFragment"
             app:popUpTo="@id/greetingFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/hackathonsListFragment"
+        android:name="com.vasyancoder.feature_hackathon_list.presentation.HackathonsListFragment"
+        android:label="HackathonsListFragment" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.vasyancoder.presentation.CalendarFragment"
+        android:label="CalendarFragment" />
 </navigation>

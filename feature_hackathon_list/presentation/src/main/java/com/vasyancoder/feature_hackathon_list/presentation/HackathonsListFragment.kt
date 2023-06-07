@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.vasyancoder.feature_hackathon_list.presentation.databinding.FragmentHackathonsListBinding
 import com.vasyancoder.feature_hackathon_list.presentation.hackathon_list.HackathonsAdapter
 import com.vasyancoder.feature_hackathon_list.presentation.tag_list.TagAdapter
@@ -32,6 +33,8 @@ class HackathonsListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.updateHackathons("")
+
         setUpHackathonsRecyclerView()
         setUpTagRecyclerView()
 
@@ -45,12 +48,14 @@ class HackathonsListFragment : Fragment() {
     private fun setUpHackathonsRecyclerView() {
         with(binding.recyclerHackathons) {
             hackathonsAdapter = HackathonsAdapter()
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             adapter = hackathonsAdapter
         }
     }
 
     private fun setUpTagRecyclerView() {
-        with(binding.recyclerHackathons) {
+        with(binding.recyclerTags) {
             tagAdapter = TagAdapter()
             adapter = tagAdapter
         }

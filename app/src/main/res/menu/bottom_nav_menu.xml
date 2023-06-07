@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/fragmentHackathonsList"
+        android:id="@+id/hackathonsListFragment"
         android:enabled="true"
         android:icon="@drawable/icon_list"
         android:title="@string/list" />
     <item
-        android:id="@+id/fragmentCalendar"
+        android:id="@+id/calendarFragment"
         android:enabled="true"
         android:icon="@drawable/icon_calendar"
         android:title="@string/calendar" />

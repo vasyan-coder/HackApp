@@ -13,8 +13,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var navController: NavController
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,13 +23,18 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         val navController = navHostFragment.navController
 
-        bottomNavView.setupWithNavController(navController)
+
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id) {
                 R.id.greetingFragment -> bottomNavView.visibility = View.GONE
                 R.id.loginFragment -> bottomNavView.visibility = View.GONE
                 R.id.registrationFragment -> bottomNavView.visibility = View.GONE
+                R.id.hackathonsListFragment -> {
+                    bottomNavView.setupWithNavController(navController)
+                    bottomNavView.visibility = View.VISIBLE
+                }
+                R.id.calendarFragment -> bottomNavView.visibility = View.VISIBLE
             }
         }
     }

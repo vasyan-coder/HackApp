@@ -1,11 +1,10 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
-    alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "com.vasyancoder.data"
+    namespace = "com.vasyancoder.feature_calendar.domain"
     compileSdk = 33
 
     defaultConfig {
@@ -26,11 +25,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
 }
 
@@ -42,15 +41,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
-    implementation(libs.androidx.room.room.ktx)
-    ksp(libs.androidx.room.room.compiler)
-
-    implementation(libs.org.jetbrains.kotlinx.coroutines)
-
-    implementation(project(":feature_login:domain"))
-    implementation(project(":feature_registration:domain"))
-    implementation(project(":feature_hackathon_list:domain"))
-    implementation(project(":feature_calendar:domain"))
-
 }

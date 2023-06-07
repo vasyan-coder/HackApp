@@ -24,7 +24,8 @@ class HackathonRepositoryImpl(
         Tag(
             name = "Offline",
             status = false
-        ),
+        )
+
     )
 
     override fun getHackathonList(tag: String): LiveData<List<Hackathon>> = Transformations.map(

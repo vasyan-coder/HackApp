@@ -60,7 +60,7 @@ class LoginFragment : Fragment() {
 
         viewModel.authenticationResult.observe(viewLifecycleOwner) {
             if (it == AuthenticateUserUseCase.AuthenticationResult.Success) {
-                Log.d(TAG, it.toString())
+                navigate(actionId = R.id.action_loginFragment_to_hackathonsListFragment)
             }
         }
     }
