@@ -1,6 +1,7 @@
 package com.vasyancoder.feature_registration.presentation
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -21,6 +22,9 @@ class RegistrationViewModel(application: Application) : AndroidViewModel(applica
     val registrationResult: LiveData<RegistrationUserUseCase.RegistrationResult> =
         _registrationResult
 
+    private val _validation = MutableLiveData<String>()
+    val validation = _validation
+
     fun registerUser(login: String, password: String, confirmPassword: String, email: String) {
 
         val validate = validateUserInput(
@@ -37,6 +41,14 @@ class RegistrationViewModel(application: Application) : AndroidViewModel(applica
                     registerUser(RegistrationUserUseCase.UserCredentials(login, password, email))
                 _registrationResult.postValue(register)
             }
+        } else if (validate is ValidateUserInputUseCase.ValidationResult.Error ){
+            Log.d(TAG, validate.message)
+            _validation.value = validate.message
         }
+    }
+
+    companion object {
+
+        private const val TAG = "RegistrationViewModel"
     }
 }
