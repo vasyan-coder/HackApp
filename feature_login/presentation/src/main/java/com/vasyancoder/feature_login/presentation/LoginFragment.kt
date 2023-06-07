@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.vasyancoder.feature_login.domain.use_case.AuthenticateUserUseCase
 import com.vasyancoder.feature_login.presentation.databinding.FragmentLoginBinding
 import com.vasyancoder.navigation.navigate
