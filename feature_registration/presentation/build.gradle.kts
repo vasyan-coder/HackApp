@@ -1,15 +1,15 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
 }
 
 android {
-    namespace = "com.vasyancoder.feature_login.presentation"
+    namespace = "com.vasyancoder.feature_registration.presentation"
     compileSdk = 33
 
     defaultConfig {
         minSdk = 24
+        targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -25,14 +25,14 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
-    viewBinding {
-        enable = true
+    buildFeatures {
+        viewBinding = true
     }
 }
 
@@ -56,5 +56,5 @@ dependencies {
     implementation(project(":navigation"))
     implementation(project(":data"))
 
-    implementation(project(":feature_login:domain"))
+    implementation(project(":feature_registration:domain"))
 }

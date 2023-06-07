@@ -38,6 +38,18 @@ class GreetingFragment : Fragment() {
                 extras = extras
             )
         }
+
+        binding.buttonCreateAccount.setOnClickListener {
+            val extras: Navigator.Extras = FragmentNavigatorExtras(
+                binding.buttonCreateAccount to
+                        getString(com.vasyancoder.core.R.string.bottomButtonTransition)
+            )
+
+            navigate(
+                actionId = R.id.action_greetingFragment_to_registrationFragment,
+                extras = extras
+            )
+        }
     }
 
     override fun onDestroyView() {

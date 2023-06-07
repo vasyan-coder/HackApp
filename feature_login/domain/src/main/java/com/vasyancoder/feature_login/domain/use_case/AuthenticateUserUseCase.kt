@@ -1,6 +1,7 @@
 package com.vasyancoder.feature_login.domain.use_case
 
-import com.vasyancoder.feature_login.domain.repository.UserRepository
+import com.vasyancoder.feature_login.domain.UserRepository
+
 
 class AuthenticateUserUseCase(private val userRepository: UserRepository) {
 

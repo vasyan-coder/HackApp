@@ -29,4 +29,9 @@ Let's start hacking!
     <string name="prompt_login">Do you have account? Log in</string>
     <string name="create_account">Create account</string>
 
+    <!-->feature_registration-->
+    <string name="base_info">Base Info</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="e_mail">e-mail</string>
+
 </resources>

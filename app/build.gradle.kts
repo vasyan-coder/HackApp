@@ -53,6 +53,6 @@ dependencies {
     implementation(project(":navigation"))
 
     implementation(project(":feature_welcome:presentation"))
-
     implementation(project(":feature_login:presentation"))
+    implementation(project(":feature_registration:presentation"))
 }
