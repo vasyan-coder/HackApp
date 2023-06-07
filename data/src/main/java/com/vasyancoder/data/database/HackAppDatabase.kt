@@ -5,19 +5,22 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.vasyancoder.data.database.dao.HackathonDao
 import com.vasyancoder.data.database.dao.UserDao
+import com.vasyancoder.data.database.model.HackathonModel
 import com.vasyancoder.data.database.model.User
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Database(
-    entities = [User::class],
+    entities = [User::class, HackathonModel::class],
     version = 1,
     exportSchema = true
 )
 abstract class HackAppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
+    abstract fun hackathonDao(): HackathonDao
 
     companion object {
 
@@ -40,6 +43,15 @@ abstract class HackAppDatabase : RoomDatabase() {
                                     login = "test",
                                     password = "123",
                                     email = "test@mail.com"
+                                )
+                            )
+                            INSTANCE?.hackathonDao()?.addHackathon(
+                                HackathonModel(
+                                    id = 0,
+                                    name = "TEST",
+                                    organization = "MTC",
+                                    dates = "Регистрация до: 22 марта\nПроходит: с 24 до 30 марта",
+                                    status = "Online"
                                 )
                             )
                         }

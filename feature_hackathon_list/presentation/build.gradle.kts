@@ -55,4 +55,6 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":navigation"))
     implementation(project(":data"))
+
+    implementation(project(":feature_hackathon_list:domain"))
 }
